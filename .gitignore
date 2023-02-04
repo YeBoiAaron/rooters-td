@@ -42,6 +42,7 @@ ExportedObj/
 *.user
 *.userprefs
 *.pidb
+<<<<<<< Updated upstream
 *.booproj
 *.svd
 *.pdb
@@ -72,3 +73,20 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 [Aa]ssets/[Ss]treamingAssets/aa.meta
 [Aa]ssets/[Ss]treamingAssets/aa/*
+=======
+.DS_Store
+
+###
+# OS generated
+###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+*.log
+>>>>>>> Stashed changes
+*.log
