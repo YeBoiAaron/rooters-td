@@ -3,6 +3,12 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 [Ll]ibrary/
+<<<<<<< Updated upstream
+=======
+[Ll]ocal[Cc]ache/
+[Ll]ogs/
+[Oo]bj/
+>>>>>>> Stashed changes
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
