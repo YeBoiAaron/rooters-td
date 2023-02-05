@@ -4,41 +4,41 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-[SerializeField] private float range;
-[SerializeField] private float damage;
-[SerializeField] private float timeBetweenShots; //Time in seconds between shots}
+    [SerializeField] private float range;
+    [SerializeField] private float damage;
+    [SerializeField] private float timeBetweenShots; //Time in seconds between shots
 
-    private float nexTimetoShoot;
+    private float nextTimeToShoot;
 
     public GameObject currentTarget;
 
     private void Start()
     {
-        nexTimetoShoot = Time.time;
+        nextTimeToShoot = Time.time;
     }
 
     private void updateNearestEnemy()
     {
         GameObject currentNearestEnemy = null;
 
-        float distance =  Mathf.Infinity;
+        float distance = Mathf.Infinity;
 
-        foreach(GameObject enemy in Enemies.enemies)
+        foreach (GameObject enemy in Enemies.enemies)
         {
-            if(enemy != null)
+            if (enemy != null)
             {
                 float _distance = (transform.position - enemy.transform.position).magnitude;
 
-                if(_distance < distance)
+                if (_distance < distance)
                 {
                     distance = _distance;
                     currentNearestEnemy = enemy;
                 }
             }
-            
+
         }
 
-        if(distance <= range)
+        if (distance <= range)
         {
             currentTarget = currentNearestEnemy;
         }
@@ -50,7 +50,7 @@ public class Tower : MonoBehaviour
 
     protected virtual void shoot()
     {
-        if( currentTarget != null)
+        if (currentTarget != null)
         {
             Enemy enemyScript = currentTarget.GetComponent<Enemy>();
 
@@ -61,14 +61,14 @@ public class Tower : MonoBehaviour
     private void Update()
     {
         updateNearestEnemy();
-        
-        
-        if(Time.time >= nexTimetoShoot)
+
+
+        if (Time.time >= nextTimeToShoot)
         {
-            if(currentTarget != null)
+            if (currentTarget != null)
             {
                 shoot();
-                nexTimetoShoot = Time.time + timeBetweenShots;
+                nextTimeToShoot = Time.time + timeBetweenShots;
             }
         }
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
     [SerializeField]
     private float enemyHealth;
 
@@ -35,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
         enemyHealth -= ammount;
 
-        if(enemyHealth <= 0)
+        if (enemyHealth <= 0)
         {
             die();
         }
@@ -49,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     private void moveEnemy()
     {
-        transform.position = Vector3.MoveTowards(transform.position,targetTile.transform.position,movementSpeed * Time.deltaTime); 
+        transform.position = Vector3.MoveTowards(transform.position, targetTile.transform.position, movementSpeed * Time.deltaTime);
     }
 
     private void checkPosition()
