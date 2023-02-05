@@ -16,6 +16,11 @@ public class Enemy : MonoBehaviour
 
     private GameObject targetTile;
 
+    private void Awake()
+    {
+        Enemies.enemies.Add(gameObject);
+    }
+
     public void Start()
     {
         initializeEnemy();
@@ -38,6 +43,7 @@ public class Enemy : MonoBehaviour
 
     private void die()
     {
+        Enemies.enemies.Remove(gameObject);
         Destroy(transform.gameObject);
     }
 
